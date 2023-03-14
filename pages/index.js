@@ -12,19 +12,19 @@ const mainProps = {
   title: "Managed agency selection",
   description: "Strengthen your onboarding process",
   cardOne: {
-    image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
-    title: "Managed agency selection",
-    description: "Strengthen your onboarding process",
+    image: { src: "/img/C1.png", alt: "", width: 100, height: 100 },
+    title: "Brief",
+    description:"Complete brief writing and or simple guidance on what to include, we've got you coverted.",
   },
   cardTwo: {
-    image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
-    title: "Managed agency selection",
-    description: "Strengthen your onboarding process",
+    image: { src: "/img/C2.png", alt: "", width: 100, height: 100 },
+    title: "Search",
+    description:"In-depth agency search covering;criteria matching, door knocking and due dilligence vetting.",
   },
   cardThree: {
-    image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
-    title: "Managed agency selection",
-    description: "Strengthen your onboarding process",
+    image: { src: "/img/C3.png", alt: "", width: 100, height: 100 },
+    title: "Pitch",
+    description:"Comprehensive pitch management, including comms, diary management and pitch hosting.",
   },
 };
 export default function Home() {

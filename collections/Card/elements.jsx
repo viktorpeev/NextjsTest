@@ -2,7 +2,12 @@ import styled from "styled-components";
 import { Button, SectionContainer, SectionBigHeading, SectionSubheading } from "~/components";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
-  align-items: center;
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+  border:1px solid gray;
+  background-color:lightgray;
+  width:50%;
 `;
 
 export const StyledGetStartedBtn = styled((props) =><Button {...props} variant="contained" color="main" />)`
@@ -23,8 +28,7 @@ export const StyledDescription = styled((props) => <SectionSubheading {...props}
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
   color: black;
-  width: 30%;
-  margin-left: 11.125rem;
+  width: 100%;
   font-family: sans-serif;
 `;
 
@@ -33,9 +37,5 @@ export const StyledCTAContainer = styled(({ ...props }) => <div {...props} />)`
 `;
 
 export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)`
-  max-width: 32.03rem;
-  max-height: 65rem;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
+  width: 7.5rem;
 `;
