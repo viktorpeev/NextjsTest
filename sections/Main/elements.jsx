@@ -9,6 +9,7 @@ export const StyledGetStartedBtn = styled((props) =><Button {...props} variant="
   margin-top: 4.375rem;
   padding-top: 0;
   padding-bottom: 0;
+  background-color:red;
 `;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
