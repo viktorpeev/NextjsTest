@@ -6,18 +6,21 @@ import {
   StyledTitle,
   StyledDescription,
   StyledImageContainer,
+  StyledSticker
 } from "./elements";
 
 export const Card = ({ ...props }) => {
+  const {description,title,image,link} = props;
   return (
-    <StyledContainer {...props}>
+<StyledContainer>
       <StyledImageContainer>
-        <Image layout="responsive" src={props.image} alt={props.alt} width={props.width} height={props.height} />
+        <img layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
       </StyledImageContainer>
       <StyledTextContainer>
-        <StyledTitle>{props.title}</StyledTitle>
-        <StyledDescription>{props.description}</StyledDescription>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledDescription dangerouslySetInnerHTML={{__html:description}}></StyledDescription>
       </StyledTextContainer>
-    </StyledContainer>
+      <StyledSticker dangerouslySetInnerHTML={{__html:link}}></StyledSticker>
+    </StyledContainer> 
   );
 };

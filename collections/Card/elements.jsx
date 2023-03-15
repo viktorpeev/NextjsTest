@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import { Button, SectionContainer, SectionBigHeading, SectionSubheading } from "~/components";
+import { Button, SectionContainer } from "~/components";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
   display:flex;
-  justify-content:space-between;
   margin-top:10px;
-  border:1px solid gray;
-  background-color:lightgray;
-  width:50%;
+  border:1px solid #f4f4f4;
+  border-radius:15px;
+  background-color:#f4f4f4;
+  width:60%;
+  height:150px;
+  margin-top:35px;
 `;
 
 export const StyledGetStartedBtn = styled((props) =><Button {...props} variant="contained" color="main" />)`
@@ -17,19 +19,26 @@ export const StyledGetStartedBtn = styled((props) =><Button {...props} variant="
   background-color:red;
 `;
 
-export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
+export const StyledTitle = styled((props) => <h1 {...props} />)`
   margin: 0;
   color: black;
 `;
 
-export const StyledDescription = styled((props) => <SectionSubheading {...props} />)`
-  margin: 1.563rem 0 0;
+export const StyledDescription = styled((props) => <p {...props} />)`
+  margin: 0;
+  font-size:1.22rem;
+  strong{
+    font-weight:bold;
+  }
 `;
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
   color: black;
-  width: 100%;
+  width: 53%;
   font-family: sans-serif;
+  align-self: center;
+
+  
 `;
 
 export const StyledCTAContainer = styled(({ ...props }) => <div {...props} />)`
@@ -37,5 +46,17 @@ export const StyledCTAContainer = styled(({ ...props }) => <div {...props} />)`
 `;
 
 export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)`
-  width: 7.5rem;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const StyledSticker = styled((props) =><p {...props}  />)`
+  position: absolute;
+  margin-left: 24.2em;
+  margin-top: 0em;
+  color: red;
+  transform: rotate(10deg);
+  font-weight: bold;
+  font-size:1.5em;
 `;
