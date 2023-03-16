@@ -60,5 +60,8 @@ export const StyledSticker = styled((props) =><p {...props}  />)`
   transform: rotate(10deg);
   font-weight: bold;
   font-size:1.5em;
+  @media (min-width: 1024px) {
+    display:none;
+  }
 `;
 

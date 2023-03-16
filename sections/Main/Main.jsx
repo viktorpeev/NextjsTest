@@ -52,6 +52,7 @@ export const Main = ({ image, title, description, ...props }) => {
           <StyledImageContainer>
             <img
               layout="responsive"
+              width='100%'
               src={image.src}
               alt={image.alt}
             />
