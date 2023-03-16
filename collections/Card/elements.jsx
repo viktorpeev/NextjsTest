@@ -7,7 +7,9 @@ export const StyledContainer = styled(({ height, ...props }) => <SectionContaine
   border:1px solid #f4f4f4;
   border-radius:15px;
   background-color:#f4f4f4;
-  width:60%;
+  width:70vw;
+  min-width:470px;
+  max-width:605px;
   height:150px;
   margin-top:35px;
 `;
@@ -52,11 +54,11 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   justify-content: center;
 `;
 export const StyledSticker = styled((props) =><p {...props}  />)`
-  position: absolute;
-  margin-left: 24.2em;
+  position: sticky;
   margin-top: 0em;
   color: red;
   transform: rotate(10deg);
   font-weight: bold;
   font-size:1.5em;
 `;
+

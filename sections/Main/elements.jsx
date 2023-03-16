@@ -29,11 +29,24 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: url("img/background.png");
+  @media (min-width: 1024px) {
+    max-width: auto;
+    width:auto;
+
+    img{
+      width:100%;
+      max-width:24.03rem;
+    }
+  }
   
 `;
 export const ContentContainer = styled(({ ...props }) => <div {...props} />)`
+@media (min-width: 1024px) {
+  display:flex;
+  justify-content:space-around;
+}
 `;
 export const Background = styled(({ ...props }) => <div {...props} />)`
-  background-size: 75em;
-  background-image: url("img/background.png");
+  
 `;

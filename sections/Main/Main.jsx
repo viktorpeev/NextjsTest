@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Card } from "../../collections/Card/Card"
-
+import { Card } from "../../collections/Card/Card";
+ 
 import {
   StyledTextContainer,
   StyledContainer,
@@ -8,30 +9,39 @@ import {
   StyledDescription,
   StyledImageContainer,
   ContentContainer,
-  Background
+  Background,
 } from "./elements";
-
-const Card1 = {
-  image: { src: "/img/C1.png", alt: "", width: 75, height: 75 },
-  title: "Brief",
-  description:
-    "Complete <b>brief writing and or simple guidance</b> on what to include, we've got you coverted.",
-    link:'link to brief <br>generator??',
-};
-const Card2 = {
-  image: { src: "/img/C2.png", alt: "", width: 75, height: 75 },
-  title: "Search",
-  description:
-    "In-depth agency search covering; <b>criteria matching</b>, door knocking and due dilligence vetting.",
-};
-const Card3 = {
-  image: { src: "/img/C3.png", alt: "", width: 75, height: 75 },
-  title: "Pitch",
-  description:
-    "Comprehensive <b>pitch management</b>, including comms, diary management and pitch hosting.",
-};
-
+ 
+const cardsDb = [
+  {
+    title: "Brief",
+    description:
+      "Complete <b>brief writing and or simple guidance</b> on what to include, we've got you coverted.",
+    link: "link to brief <br>generator??",
+    width: "50px",
+  },
+  {
+    title: "Search",
+    description:
+      "In-depth agency search covering; <b>criteria matching</b>, door knocking and due dilligence vetting.",
+  },
+  {
+    title: "Pitch",
+    description:
+      "Comprehensive <b>pitch management</b>, including comms, diary management and pitch hosting.",
+  },
+];
+ 
 export const Main = ({ image, title, description, ...props }) => {
+  const [cards, setCards] = useState([]);
+ 
+  useEffect(() => {
+    /**
+     * TODO - api call za posle ili moje da setna bekend
+     */
+    setCards(cardsDb);
+  }, []);
+ 
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
@@ -39,15 +49,17 @@ export const Main = ({ image, title, description, ...props }) => {
         <StyledDescription>{description}</StyledDescription>
       </StyledTextContainer>
       <ContentContainer>
-        <Background>
-        <StyledImageContainer>
-          <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
-        </StyledImageContainer>
-        </Background>
+          <StyledImageContainer>
+            <img
+              layout="responsive"
+              src={image.src}
+              alt={image.alt}
+            />
+          </StyledImageContainer>
         <div>
-          <Card {...Card1} />
-          <Card {...Card2} />
-          <Card {...Card3} />
+          {cards.map((card, index) => (
+            <Card key={index} {...card} src={`/img/C${index + 1}.png`} />
+          ))}
         </div>
       </ContentContainer>
     </StyledContainer>
