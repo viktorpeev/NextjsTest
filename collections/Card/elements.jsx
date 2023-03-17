@@ -8,7 +8,7 @@ export const StyledContainer = styled(({ height, ...props }) => <SectionContaine
   border-radius:15px;
   background-color:#f4f4f4;
   width:70vw;
-  min-width:470px;
+  min-width:360px;
   max-width:605px;
   height:150px;
   margin-top:35px;
@@ -28,7 +28,7 @@ export const StyledTitle = styled((props) => <h1 {...props} />)`
 
 export const StyledDescription = styled((props) => <p {...props} />)`
   margin: 0;
-  font-size:1.22rem;
+  font-size:1.1rem;
   strong{
     font-weight:bold;
   }
@@ -54,12 +54,16 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   justify-content: center;
 `;
 export const StyledSticker = styled((props) =><p {...props}  />)`
-  position: sticky;
-  margin-top: 0em;
+  position: absolute;
+  margin-top: -2em;
   color: red;
   transform: rotate(10deg);
   font-weight: bold;
   font-size:1.5em;
+  width: 82vw;
+  max-width: 710px;
+  min-width: 400px;
+  text-align: right;
   @media (min-width: 1024px) {
     display:none;
   }
