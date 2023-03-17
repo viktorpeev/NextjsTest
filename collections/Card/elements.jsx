@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-export const CardContainer = styled(({...props}) => <div {...props} />)`
+export const CardContainer = styled((props) => <div {...props} />)`
   display:flex;
   margin-top:10px;
   border:1px solid #f4f4f4;
   border-radius:15px;
   background-color:#f4f4f4;
   min-width:360px;
-  max-width:605px;
+  ${(props)=> `max-width: ${props.maxWidth};`}
   height:150px;
+  ${(props)=> `width: ${props.width};`}
   margin-top:35px;
 
   &:hover{
