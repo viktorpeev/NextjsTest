@@ -2,7 +2,7 @@ import Image from "next/image";
  
 import {
   StyledTextContainer,
-  StyledContainer,
+  CardContainer,
   StyledTitle,
   StyledDescription,
   StyledImageContainer,
@@ -10,9 +10,9 @@ import {
 } from "./elements";
  
 export const Card = (props) => {
-  const { description, title, src, link } = props;
+  const { description, title, src, link, width, maxWidth } = props;
   return (
-    <StyledContainer>
+    <CardContainer style={{width:`${width}`,maxWidth:`${maxWidth}`}}>
       <StyledImageContainer>
         <img layout="responsive" alt={src} src={src} />
       </StyledImageContainer>
@@ -23,6 +23,6 @@ export const Card = (props) => {
         ></StyledDescription>
       </StyledTextContainer>
       <StyledSticker dangerouslySetInnerHTML={{ __html: link }}></StyledSticker>
-    </StyledContainer>
+    </CardContainer>
   );
 };

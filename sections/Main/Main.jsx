@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Card } from "../../collections/Card/Card";
- 
+import { db } from '../../utils/firebase-config';
+import { getDocs, collection } from 'firebase/firestore';
+
 import {
   StyledTextContainer,
   StyledContainer,
@@ -9,39 +10,22 @@ import {
   StyledDescription,
   StyledImageContainer,
   ContentContainer,
-  Background,
+  MainCardContainer,
 } from "./elements";
- 
-const cardsDb = [
-  {
-    title: "Brief",
-    description:
-      "Complete <b>brief writing and or simple guidance</b> on what to include, we've got you coverted.",
-    link: "link to brief <br>generator??",
-    width: "50px",
-  },
-  {
-    title: "Search",
-    description:
-      "In-depth agency search covering; <b>criteria matching</b>, door knocking and due dilligence vetting.",
-  },
-  {
-    title: "Pitch",
-    description:
-      "Comprehensive <b>pitch management</b>, including comms, diary management and pitch hosting.",
-  },
-];
- 
+
+const usersCollectionRef = collection(db, 'Cards');
+
 export const Main = ({ image, title, description, ...props }) => {
   const [cards, setCards] = useState([]);
- 
+
   useEffect(() => {
-    /**
-     * TODO - api call za posle ili moje da setna bekend
-     */
-    setCards(cardsDb);
+    const getCards = async () => {
+      const data = await getDocs(usersCollectionRef);
+      setCards(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  }
+  getCards();
   }, []);
- 
+
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
@@ -49,19 +33,21 @@ export const Main = ({ image, title, description, ...props }) => {
         <StyledDescription>{description}</StyledDescription>
       </StyledTextContainer>
       <ContentContainer>
-          <StyledImageContainer>
-            <img
-              layout="responsive"
-              width='100%'
-              src={image.src}
-              alt={image.alt}
-            />
-          </StyledImageContainer>
-        <div>
-          {cards.map((card, index) => (
-            <Card key={index} {...card} src={`/img/C${index + 1}.png`} />
-          ))}
-        </div>
+        <StyledImageContainer>
+          <img
+            layout="responsive"
+            width='100%'
+            src={image.src}
+            alt={image.alt}
+          />
+        </StyledImageContainer>
+        <MainCardContainer>
+          <div>
+            {cards.map((card, index) => (
+              <Card key={index} {...card} src={`/img/C${index + 1}.png`} />
+            ))}
+          </div>
+        </MainCardContainer>
       </ContentContainer>
     </StyledContainer>
   );

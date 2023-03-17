@@ -1,24 +1,15 @@
 import styled from "styled-components";
-import { Button, SectionContainer } from "~/components";
 
-export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
+export const CardContainer = styled(({...props}) => <div {...props} />)`
   display:flex;
   margin-top:10px;
   border:1px solid #f4f4f4;
   border-radius:15px;
   background-color:#f4f4f4;
-  width:70vw;
   min-width:360px;
   max-width:605px;
   height:150px;
   margin-top:35px;
-`;
-
-export const StyledGetStartedBtn = styled((props) =><Button {...props} variant="contained" color="main" />)`
-  margin-top: 4.375rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color:red;
 `;
 
 export const StyledTitle = styled((props) => <h1 {...props} />)`
@@ -60,7 +51,7 @@ export const StyledSticker = styled((props) =><p {...props}  />)`
   transform: rotate(10deg);
   font-weight: bold;
   font-size:1.5em;
-  width: 82vw;
+  width: 65vw;
   max-width: 710px;
   min-width: 400px;
   text-align: right;

@@ -49,6 +49,7 @@ export const ContentContainer = styled(({ ...props }) => <div {...props} />)`
   grid-gap:120px;
 }
 `;
-export const Background = styled(({ ...props }) => <div {...props} />)`
-  
+export const MainCardContainer = styled(({ ...props }) => <div {...props} />)`
+  display: flex;
+  justify-content: center;
 `;
