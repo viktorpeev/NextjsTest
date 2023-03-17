@@ -10,6 +10,16 @@ export const CardContainer = styled(({...props}) => <div {...props} />)`
   max-width:605px;
   height:150px;
   margin-top:35px;
+
+  &:hover{
+    h1{
+      text-decoration:underline;
+      color:blue
+    }
+    border-color:blue;
+    cursor:pointer;
+    transition:0.3s;
+  }
 `;
 
 export const StyledTitle = styled((props) => <h1 {...props} />)`
