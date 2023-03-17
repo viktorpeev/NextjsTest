@@ -30,8 +30,6 @@ export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
   width: 53%;
   font-family: sans-serif;
   align-self: center;
-
-  
 `;
 
 export const StyledCTAContainer = styled(({ ...props }) => <div {...props} />)`

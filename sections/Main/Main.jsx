@@ -11,6 +11,7 @@ import {
   StyledImageContainer,
   ContentContainer,
   MainCardContainer,
+  Background
 } from "./elements";
 
 const usersCollectionRef = collection(db, 'Cards');
@@ -33,6 +34,7 @@ export const Main = ({ image, title, description, ...props }) => {
         <StyledDescription>{description}</StyledDescription>
       </StyledTextContainer>
       <ContentContainer>
+        <Background>
         <StyledImageContainer>
           <img
             layout="responsive"
@@ -41,6 +43,7 @@ export const Main = ({ image, title, description, ...props }) => {
             alt={image.alt}
           />
         </StyledImageContainer>
+        </Background>
         <MainCardContainer>
           <div>
             {cards.map((card, index) => (

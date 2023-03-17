@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { SectionContainer, SectionBigHeading, SectionSubheading } from "~/components";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
-  
+@media (min-width: 1024px) {
+  background-image: url("img/background.png");
+  background-size: 100%;
+}
 `;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
@@ -30,7 +33,6 @@ export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)
   width: 100%;
   height: 100%;
   display:flex;
-  background-image: url("img/background.png");
   @media (min-width: 1024px) {
     max-width: auto;
     width:auto;
@@ -47,9 +49,16 @@ export const ContentContainer = styled(({ ...props }) => <div {...props} />)`
   display:flex;
   justify-content:center;
   grid-gap:120px;
+  background-image: url(img/background.png);
+  background-size: 100%;
 }
 `;
 export const MainCardContainer = styled(({ ...props }) => <div {...props} />)`
   display: flex;
   justify-content: center;
+`;
+
+export const Background = styled(({ ...props }) => <div {...props} />)`
+  background-image: url("img/background.png");
+  background-size: 100%;
 `;
