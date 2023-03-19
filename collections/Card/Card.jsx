@@ -10,7 +10,7 @@ import {
 export const Card = (props) => {
   const { description, title, src, link, width, maxWidth } = props;
   return (
-    <CardContainer width={width} maxWidth={maxWidth}>
+    <CardContainer width={width} maxwidth={maxWidth}>
       <StyledImageContainer>
         <img layout="responsive" alt={src} src={src} />
       </StyledImageContainer>

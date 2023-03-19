@@ -7,7 +7,7 @@ export const CardContainer = styled((props) => <div {...props} />)`
   border-radius:15px;
   background-color:#f4f4f4;
   min-width:360px;
-  ${(props)=> `max-width: ${props.maxWidth};`}
+  ${(props)=> `max-width: ${props.maxwidth};`}
   height:150px;
   ${(props)=> `width: ${props.width};`}
   margin-top:35px;
